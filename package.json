@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "plwai-github-page",
+  "description": "Pai Lee Wai Personal Page",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Pai Lee Wai <pailee.wai@gmail.com>",
   "dependencies": {
     "emotion": "^9.2.8",
     "emotion-server": "^9.2.8",
@@ -15,10 +15,12 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
-    "typography-theme-kirkham": "^0.16.3"
+    "typography-theme-kirkham": "^0.16.3",
+    "typography-theme-stern-grove": "^0.15.10"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "github-page"
   ],
   "license": "MIT",
   "scripts": {
@@ -28,10 +30,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "flow": "^0.2.3",
     "prettier": "^1.13.7"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/plwai/plwai_github_page"
   }
 }
