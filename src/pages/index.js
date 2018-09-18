@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { SocialIcon } from 'react-social-icons'
 
 import SocialLinks from '../components/socialLinks'
+import Layout from '../layouts/layout'
 
 import photo from '../../public/static/photo.jpg'
 import { rhythm } from '../utils/typography'
@@ -30,14 +30,16 @@ IndexContainer.description = styled.h4`
 `
 
 const IndexPage = () => (
-  <IndexContainer>
-    <IndexContainer.myPhoto src={photo} />
-    <IndexContainer.myName>Pai Lee Wai</IndexContainer.myName>
-    <IndexContainer.description>
-      Software developer interested in Rust, React, nodejs, C/C++, Opengl
-    </IndexContainer.description>
-    <SocialLinks />
-  </IndexContainer>
+  <Layout>
+    <IndexContainer>
+      <IndexContainer.myPhoto src={photo} />
+      <IndexContainer.myName>Pai Lee Wai</IndexContainer.myName>
+      <IndexContainer.description>
+        Software developer interested in Rust, React, nodejs, C/C++, Opengl
+      </IndexContainer.description>
+      <SocialLinks />
+    </IndexContainer>
+  </Layout>
 )
 
 export default IndexPage
