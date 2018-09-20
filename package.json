@@ -21,6 +21,7 @@
     "react-helmet": "^5.2.0",
     "react-social-icons": "^3.0.0",
     "react-typography": "^0.16.13",
+    "shortid": "^2.2.13",
     "typography": "^0.16.17",
     "typography-theme-kirkham": "^0.16.3",
     "typography-theme-stern-grove": "^0.15.10"

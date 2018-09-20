@@ -13,7 +13,7 @@ projects:
       url: 'https://github.com/jk-gan/ADM',
       description: 'Download manager with Aria2 as the download engine',
       screenshot: 'adm.PNG',
-      technology: 'Javascript, Electron, C/C++, N-API',
+      technology: 'Electron, React, C/C++, N-API',
     },
     {
       title: 'Simple Opengl Engine',

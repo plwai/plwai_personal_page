@@ -4,7 +4,7 @@ import styled from 'react-emotion'
 import SocialLinks from '../components/socialLinks'
 import Layout from '../layouts/layout'
 
-import photo from '../../public/static/img/photo.jpg'
+import photo from '../../public/img/photo.jpg'
 import { rhythm } from '../utils/typography'
 
 const IndexContainer = styled.div`
