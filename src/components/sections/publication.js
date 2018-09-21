@@ -198,12 +198,12 @@ const PublicationPage = () => (
           GPUMLib SOM Reconstruction
         </PublicationContainer.publishName>
         <PublicationContainer.description>
-          This article tackling on the performance problem of large scale 3D
-          point cloud data. There are many different kind of algorithms have
-          been proposed to solve this problem and Deep Learning is one of them.
-          In this article, a combination solution of Deep Learning concepts,
-          Self Organizing Map(SOM) and GPU parallel programming are proposed to
-          solve the performance problem of large scale 3D point cloud data.
+          This article tackling the performance problem of large scale 3D point
+          cloud data. There are many different kinds of algorithms have been
+          proposed to solve this problem and Deep Learning is one of them. In
+          this article, a combination solution of Deep Learning concepts, Self
+          Organizing Map(SOM) and GPU parallel programming are proposed to solve
+          the performance problem of large scale 3D point cloud data.
         </PublicationContainer.description>
         <PublicationContainer.linksDiv>
           <PublicationContainer.linksDiv.link
@@ -218,7 +218,10 @@ const PublicationPage = () => (
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
-          <PublicationContainer.linksDiv.link href="http://gpumlib.sourceforge.net/">
+          <PublicationContainer.linksDiv.link
+            target="_blank"
+            href="http://gpumlib.sourceforge.net/"
+          >
             <PublicationContainer.linksDiv.text>
               Website
             </PublicationContainer.linksDiv.text>
@@ -227,7 +230,10 @@ const PublicationPage = () => (
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
-          <PublicationContainer.linksDiv.link href="https://github.com/plwai/SOM_Surface_Reconstruction">
+          <PublicationContainer.linksDiv.link
+            target="_blank"
+            href="https://github.com/plwai/SOM_Surface_Reconstruction"
+          >
             <PublicationContainer.linksDiv.text>
               Github
             </PublicationContainer.linksDiv.text>

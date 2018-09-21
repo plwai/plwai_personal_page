@@ -4,7 +4,7 @@ projects:
     {
       title: 'GPUMLib - SOM Surface Reconstruction',
       url: 'http://gpumlib.sourceforge.net/',
-      description: 'Surface reconstruction of point cloud data feature in GPUMLib',
+      description: 'Surface reconstruction feature of point cloud data in GPUMLib',
       screenshot: 'gpumlib.PNG',
       technology: 'C/C++, CUDA C, QT, Self Organizing Map',
     },
