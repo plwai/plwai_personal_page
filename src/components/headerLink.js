@@ -5,11 +5,11 @@ import Link from 'gatsby-link'
 import { css } from 'react-emotion'
 
 const StyledLink = selected =>
-  css({
-    color: 'white',
-    padding: '0.4em',
-    textDecoration: selected ? 'underline' : 'none',
-  })
+  css`
+    color: white;
+    padding: 0.4em;
+    text-decoration: ${selected ? 'underline' : 'none'};
+  `
 
 const HeaderLink = ({ children, to, selected = false }) => (
   <h4 style={{ margin: 0 }}>

@@ -1,45 +1,41 @@
 import React from 'react'
 import styled from 'react-emotion'
 
+import PageLayout from '../layouts/layout'
+import ProfilePage from '../components/sections/profile'
+import ProjectPage from '../components/sections/project'
+import PublicationPage from '../components/sections/publication'
+import MyBelief from '../components/sections/belief'
 import SocialLinks from '../components/socialLinks'
-import Layout from '../layouts/layout'
 
-import photo from '../../public/img/photo.jpg'
-import { rhythm } from '../utils/typography'
+const PublicationBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -999;
 
-const IndexContainer = styled.div`
-  display: flex;
-  padding-top: 20vh;
-  flex-direction: column;
-  align-items: center;
+  @media (min-width: 700px) and (min-height: 671px) {
+    background-color: #cae0fe;
+    -webkit-clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
+    clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
+  }
 `
 
-IndexContainer.myPhoto = styled.img`
-  max-width: 100px;
-  max-height: 100px;
-  border-radius: 50%;
-`
-IndexContainer.myName = styled.h1`
-  margin: 0px;
-  padding: ${rhythm(0.5)};
-`
-IndexContainer.description = styled.h4`
-  margin: 0px;
-  padding-top: ${rhythm(0.5)};
-  padding-left: ${rhythm(1.75)};
+const MaxWidthDiv = styled.div`
+  width: 100%;
 `
 
 const IndexPage = () => (
-  <Layout>
-    <IndexContainer>
-      <IndexContainer.myPhoto src={photo} />
-      <IndexContainer.myName>Pai Lee Wai</IndexContainer.myName>
-      <IndexContainer.description>
-        Software developer interested in Rust, React, nodejs, C/C++, Opengl
-      </IndexContainer.description>
-      <SocialLinks />
-    </IndexContainer>
-  </Layout>
+  <PageLayout>
+    <ProfilePage />
+    <ProjectPage />
+    <MaxWidthDiv>
+      <PublicationBackground />
+    </MaxWidthDiv>
+    <PublicationPage />
+    <MyBelief />
+    <SocialLinks />
+  </PageLayout>
 )
 
 export default IndexPage

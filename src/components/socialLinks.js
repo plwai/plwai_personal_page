@@ -8,10 +8,16 @@ const SocialContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: ${rhythm(6)};
+  padding-bottom: ${rhythm(10)};
+  background: #77afa01a;
+  width: 100%;
+  height: 100vh;
 `
 
 SocialContainer.contact = styled.h2`
   margin: 0px;
+  font-weight: 900;
   padding-top: ${rhythm(3)};
 `
 SocialContainer.socialContainer = styled.div`
@@ -25,7 +31,7 @@ const SocialIconCss = css`
 `
 const SocialLinks = () => (
   <SocialContainer>
-    <SocialContainer.contact>Contact</SocialContainer.contact>
+    <SocialContainer.contact>Contact Me</SocialContainer.contact>
     <SocialContainer.socialContainer>
       <SocialIcon
         className={SocialIconCss}

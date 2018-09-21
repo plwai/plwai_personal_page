@@ -5,16 +5,15 @@ import styled from 'react-emotion'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../components/header'
-import { rhythm } from '../utils/typography'
 
-const StyledContentContainer = styled('div')`
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: ${rhythm(1)};
-  padding-top: ${rhythm(1)};
+const StyledContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
 `
 
-const Layout = ({ children }) => (
+const PageLayout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -44,9 +43,9 @@ const Layout = ({ children }) => (
   />
 )
 
-Layout.propTypes = {
-  children: PropTypes.func,
+PageLayout.propTypes = {
+  children: PropTypes.array,
   data: PropTypes.any,
 }
 
-export default Layout
+export default PageLayout

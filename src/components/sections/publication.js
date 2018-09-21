@@ -2,20 +2,7 @@ import React from 'React'
 import styled from 'react-emotion'
 import { withPrefix } from 'gatsby'
 
-import { rhythm } from '../utils/typography'
-
-const PublicationBackground = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  z-index: -999;
-
-  @media (min-width: 700px) and (min-height: 671px) {
-    background-color: #cae0fe;
-    -webkit-clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
-    clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
-  }
-`
+import { rhythm } from '../../utils/typography'
 
 const PublicationContainer = styled.div`
   display: grid;
@@ -33,6 +20,10 @@ const PublicationContainer = styled.div`
     flex-direction: column;
 
     align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 430px;
   }
 `
 
@@ -158,7 +149,7 @@ PublicationContainer.publishName = styled.h3`
   color: #454545;
 
   @media (max-height: 800px) {
-    margin-top: ${rhythm(-1)};
+    margin-top: ${rhythm(1)};
   }
 
   @media (max-height: 670px) {
@@ -168,9 +159,7 @@ PublicationContainer.publishName = styled.h3`
 
 PublicationContainer.description = styled.p``
 
-PublicationContainer.linksDiv = styled.div`
-  display: flex;
-`
+PublicationContainer.linksDiv = styled.div``
 PublicationContainer.linksDiv.text = styled.p`
   margin: 0;
   font-weight: 600;
@@ -181,7 +170,16 @@ PublicationContainer.linksDiv.text = styled.p`
     margin-right: ${rhythm(0.2)};
   }
 `
-PublicationContainer.linksDiv.link = styled.a``
+PublicationContainer.linksDiv.link = styled.a`
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  max-width: 120px;
+
+  &:hover {
+    color: inherit;
+  }
+`
 
 const LinkSVG = styled.img`
   margin: 0;
@@ -190,7 +188,6 @@ const LinkSVG = styled.img`
 
 const PublicationPage = () => (
   <div>
-    <PublicationBackground />
     <PublicationContainer>
       <PublicationContainer.title>Publication</PublicationContainer.title>
       <PublicationContainer.gif
@@ -209,30 +206,32 @@ const PublicationPage = () => (
           solve the performance problem of large scale 3D point cloud data.
         </PublicationContainer.description>
         <PublicationContainer.linksDiv>
-          <PublicationContainer.linksDiv.text>
-            Article
-          </PublicationContainer.linksDiv.text>
-
           <PublicationContainer.linksDiv.link
             target="_blank"
             href="http://home.ijasca.com/data/documents/ID-4_Pg-1-16_GPUMLib-Deep-Learning-SOM-Library.pdf"
           >
+            <PublicationContainer.linksDiv.text>
+              Article
+            </PublicationContainer.linksDiv.text>
+
             <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
-          <PublicationContainer.linksDiv.text>
-            Website
-          </PublicationContainer.linksDiv.text>
           <PublicationContainer.linksDiv.link href="http://gpumlib.sourceforge.net/">
+            <PublicationContainer.linksDiv.text>
+              Website
+            </PublicationContainer.linksDiv.text>
+
             <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
-          <PublicationContainer.linksDiv.text>
-            Github
-          </PublicationContainer.linksDiv.text>
           <PublicationContainer.linksDiv.link href="https://github.com/plwai/SOM_Surface_Reconstruction">
+            <PublicationContainer.linksDiv.text>
+              Github
+            </PublicationContainer.linksDiv.text>
+
             <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>

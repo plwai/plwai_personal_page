@@ -29,10 +29,11 @@ const linkData = [
   },
 ]
 
-const StyledNav = styled('nav')({
-  display: 'flex',
-  paddingTop: '0.6em',
-})
+const StyledNav = styled.nav`
+  display: flex;
+  padding-top: 0.6em;
+  white-space: nowrap;
+`
 
 class Nav extends Component {
   constructor() {

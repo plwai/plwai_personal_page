@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { graphql, withPrefix } from 'gatsby'
+import { StaticQuery, graphql, withPrefix } from 'gatsby'
 import { generate } from 'shortid'
 
-import { rhythm } from '../utils/typography'
+import { rhythm } from '../../utils/typography'
 
 const ProjectPageContainer = styled.div`
   padding-bottom: ${rhythm(5)};
@@ -155,69 +155,75 @@ const FlexDiv = styled.div`
 `
 
 const ProjectPage = ({ data }) => (
-  <ProjectPageContainer>
-    <StyledPageTitleDiv>
-      <StyledPageTitleDiv.title>Projects</StyledPageTitleDiv.title>
-    </StyledPageTitleDiv>
-    <ProjectGrid>
-      {data.allMarkdownRemark.edges.map(nodes => {
-        const {
-          node: {
-            frontmatter: { projects },
-          },
-        } = nodes
-
-        return projects.map(project => (
-          <ProjectGrid.component key={generate()}>
-            <ProjectGrid.component.hyperlink href={project.url} target="_blank">
-              <ProjectGrid.component.img
-                alt={project.title}
-                src={withPrefix(`/img/${project.screenshot}`)}
-              />
-
-              <ProjectGrid.component.title>
-                {project.title}
-              </ProjectGrid.component.title>
-              <ProjectGrid.component.text>
-                {project.description}
-              </ProjectGrid.component.text>
-
-              <FlexDiv>
-                <ProjectGrid.component.techText>
-                  Tech:
-                </ProjectGrid.component.techText>
-                <ProjectGrid.component.techText style={{ paddingLeft: 0 }}>
-                  {project.technology}
-                </ProjectGrid.component.techText>
-              </FlexDiv>
-            </ProjectGrid.component.hyperlink>
-          </ProjectGrid.component>
-        ))
-      })}
-    </ProjectGrid>
-  </ProjectPageContainer>
-)
-
-export default ProjectPage
-
-export const query = graphql`
-  query {
-    allMarkdownRemark {
-      edges {
-        node {
-          id
-          frontmatter {
-            projects {
-              title
-              url
-              screenshot
-              description
-              technology
+  <StaticQuery
+    query={graphql`
+      query {
+        allMarkdownRemark {
+          edges {
+            node {
+              id
+              frontmatter {
+                projects {
+                  title
+                  url
+                  screenshot
+                  description
+                  technology
+                }
+                _PARENT
+              }
             }
-            _PARENT
           }
         }
       }
-    }
-  }
-`
+    `}
+    render={data => (
+      <ProjectPageContainer>
+        <StyledPageTitleDiv>
+          <StyledPageTitleDiv.title>Projects</StyledPageTitleDiv.title>
+        </StyledPageTitleDiv>
+        <ProjectGrid>
+          {data.allMarkdownRemark.edges.map(nodes => {
+            const {
+              node: {
+                frontmatter: { projects },
+              },
+            } = nodes
+
+            return projects.map(project => (
+              <ProjectGrid.component key={generate()}>
+                <ProjectGrid.component.hyperlink
+                  href={project.url}
+                  target="_blank"
+                >
+                  <ProjectGrid.component.img
+                    alt={project.title}
+                    src={withPrefix(`/img/${project.screenshot}`)}
+                  />
+
+                  <ProjectGrid.component.title>
+                    {project.title}
+                  </ProjectGrid.component.title>
+                  <ProjectGrid.component.text>
+                    {project.description}
+                  </ProjectGrid.component.text>
+
+                  <FlexDiv>
+                    <ProjectGrid.component.techText>
+                      Tech:
+                    </ProjectGrid.component.techText>
+                    <ProjectGrid.component.techText style={{ paddingLeft: 0 }}>
+                      {project.technology}
+                    </ProjectGrid.component.techText>
+                  </FlexDiv>
+                </ProjectGrid.component.hyperlink>
+              </ProjectGrid.component>
+            ))
+          })}
+        </ProjectGrid>
+      </ProjectPageContainer>
+    )}
+  />
+)
+
+export default ProjectPage
