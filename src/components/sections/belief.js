@@ -98,6 +98,10 @@ const DescriptionBox = styled.blockquote`
   border-radius: 20px;
 
   background: #e2e2e2;
+
+  @media (max-width: 360px) {
+    min-height: 650px;
+  }
 `
 
 DescriptionBox.smallBox = styled.div``
