@@ -16,8 +16,6 @@ const StyledContentContainer = styled.div`
 const BodyDiv = styled.div`
   max-width: 100vw;
   height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
 `
 
 const PageLayout = ({ children }) => (
@@ -45,6 +43,10 @@ const PageLayout = ({ children }) => (
               name: 'viewport',
               content:
                 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+            },
+            {
+              name: 'apple-mobile-web-app-capable',
+              content: 'yes',
             },
           ]}
         />

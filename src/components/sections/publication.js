@@ -15,6 +15,7 @@ const PublicationContainer = styled.div`
   grid-gap: ${rhythm(1)};
   max-width: 1000px;
   margin: auto;
+  width: 100%;
 
   @media (max-width: 700px), (max-height: 670px) {
     display: flex;
@@ -24,7 +25,7 @@ const PublicationContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    max-width: 430px;
+    max-width: 100%;
   }
 `
 
@@ -46,6 +47,7 @@ PublicationContainer.title = styled.h2`
     margin-top: ${rhythm(1)};
     font-size: 1.51572rem;
     font-weight: inherit;
+    max-width: 100%;
 
     &:before {
       content: '';
@@ -139,7 +141,12 @@ PublicationContainer.textDiv = styled.div`
   font-family: 'Montserrat', sans-serif;
   font-variant: common-ligatures;
 
+  @media (max-height: 800px) {
+    margin-top: ${rhythm(-4)};
+  }
+
   @media (max-width: 700px) {
+    margin-top: ${rhythm(-1)};
     padding-left: ${rhythm(1.5)};
     padding-right: ${rhythm(1.5)};
   }
