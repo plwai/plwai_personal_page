@@ -36,7 +36,7 @@ const StyledNav = styled.nav`
 
   @media (max-width: 820px) {
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     padding-top: 0;
     visibility: hidden;
   }
