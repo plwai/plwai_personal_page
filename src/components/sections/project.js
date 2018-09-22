@@ -3,6 +3,7 @@ import styled from 'react-emotion'
 import { StaticQuery, graphql, withPrefix } from 'gatsby'
 import { generate } from 'shortid'
 
+import Anchor from '../anchor'
 import { rhythm } from '../../utils/typography'
 
 const ProjectPageContainer = styled.div`
@@ -179,6 +180,7 @@ const ProjectPage = ({ data }) => (
     `}
     render={data => (
       <ProjectPageContainer>
+        <Anchor id="project" />
         <StyledPageTitleDiv>
           <StyledPageTitleDiv.title>Projects</StyledPageTitleDiv.title>
         </StyledPageTitleDiv>

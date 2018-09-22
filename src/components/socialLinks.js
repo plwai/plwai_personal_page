@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 import { SocialIcon } from 'react-social-icons'
 
+import Anchor from './anchor'
 import { rhythm } from '../utils/typography'
 
 const SocialContainer = styled.div`
@@ -31,6 +32,7 @@ const SocialIconCss = css`
 `
 const SocialLinks = () => (
   <SocialContainer>
+    <Anchor id="contacts" />
     <SocialContainer.contact>Contact Me</SocialContainer.contact>
     <SocialContainer.socialContainer>
       <SocialIcon

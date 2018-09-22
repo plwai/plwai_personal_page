@@ -40,7 +40,10 @@ class Header extends Component {
       return
     }
 
-    if (window.scrollY > this.lastScrollY) {
+    if (
+      window.scrollY > this.lastScrollY &&
+      window.scrollY - this.lastScrollY < 100
+    ) {
       this.nav.style.height = '0'
       this.nav.style.padding = '0'
       this.nav.style.opacity = '0'
@@ -57,14 +60,14 @@ class Header extends Component {
   }
 
   render() {
-    const { siteTitle } = this.props
+    const { siteTitle, to } = this.props
 
     return (
       <StyledHeaderContainer innerRef={nav => (this.nav = nav)}>
         <div>
           <h1 style={{ margin: 0 }}>
             <Link
-              to="/"
+              to={to}
               style={{
                 color: 'white',
                 textDecoration: 'none',

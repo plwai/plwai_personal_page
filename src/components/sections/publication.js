@@ -2,6 +2,7 @@ import React from 'React'
 import styled from 'react-emotion'
 import { withPrefix } from 'gatsby'
 
+import Anchor from '../anchor'
 import { rhythm } from '../../utils/typography'
 
 const PublicationContainer = styled.div`
@@ -189,7 +190,10 @@ const LinkSVG = styled.img`
 const PublicationPage = () => (
   <div>
     <PublicationContainer>
-      <PublicationContainer.title>Publication</PublicationContainer.title>
+      <PublicationContainer.title>
+        <Anchor id="publication" top="-200px" />
+        Publication
+      </PublicationContainer.title>
       <PublicationContainer.gif
         src={withPrefix(`/img/SOM_Reconstruction.gif`)}
       />

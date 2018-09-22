@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'react-emotion'
 
+import Anchor from '../anchor'
 import { rhythm } from '../../utils/typography'
 
 const Container = styled.div`
@@ -156,6 +157,7 @@ DescriptionBox.texts = styled.p`
 
 const MyBelief = () => (
   <Container>
+    <Anchor id="belief" />
     <TitleBox>
       <TitleBox.title>My Belief</TitleBox.title>
     </TitleBox>

@@ -8,24 +8,24 @@ import HeaderLink from './headerLink'
 // temporary. will be replaced by graphql
 const linkData = [
   {
-    title: 'About',
-    to: '',
+    title: 'Top',
+    to: '#profile',
   },
   {
     title: 'Projects',
-    to: '',
+    to: '#project',
   },
   {
     title: 'Publication',
-    to: '',
+    to: '#publication',
   },
   {
-    title: 'My Thoughts',
-    to: '',
+    title: 'My Belief',
+    to: '#belief',
   },
   {
     title: 'Contacts',
-    to: '',
+    to: '#contacts',
   },
 ]
 
