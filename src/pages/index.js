@@ -1,13 +1,41 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import styled from 'react-emotion'
+
+import PageLayout from '../layouts/layout'
+import ProfilePage from '../components/sections/profile'
+import ProjectPage from '../components/sections/project'
+import PublicationPage from '../components/sections/publication'
+import MyBelief from '../components/sections/belief'
+import SocialLinks from '../components/socialLinks'
+
+const PublicationBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -999;
+
+  @media (min-width: 700px) and (min-height: 671px) {
+    background-color: #cae0fe;
+    -webkit-clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
+    clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
+  }
+`
+
+const MaxWidthDiv = styled.div`
+  width: 100%;
+`
 
 const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
+  <PageLayout>
+    <ProfilePage />
+    <ProjectPage />
+    <MaxWidthDiv>
+      <PublicationBackground />
+    </MaxWidthDiv>
+    <PublicationPage />
+    <MyBelief />
+    <SocialLinks />
+  </PageLayout>
 )
 
 export default IndexPage

@@ -1,0 +1,14 @@
+{
+  "javascript.validate.enable": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "prettier.eslintIntegration": true,
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "prettier.singleQuote": true
+}
