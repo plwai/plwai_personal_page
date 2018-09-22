@@ -117,6 +117,7 @@ DescriptionBox.textBox = styled.div`
     font-size: 4em;
     float: left;
     margin-left: 5vw;
+    max-width: 50px;
 
     @media (max-width: 500px) {
       margin-top: -40px;
@@ -130,6 +131,8 @@ DescriptionBox.textBox = styled.div`
     position: relative;
     top: 200px;
     left: 5%;
+    max-width: 50px;
+    max-height: 50px;
 
     @media (max-width: 700px) {
       top: 250px;

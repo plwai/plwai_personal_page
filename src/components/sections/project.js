@@ -8,6 +8,8 @@ import { rhythm } from '../../utils/typography'
 
 const ProjectPageContainer = styled.div`
   padding-bottom: ${rhythm(5)};
+  max-width: 1000px;
+  width: 100%;
 `
 
 const StyledPageTitleDiv = styled.div``
