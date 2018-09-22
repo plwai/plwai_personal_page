@@ -164,9 +164,9 @@ const MyBelief = () => (
     <DescriptionBox>
       <DescriptionBox.textBox>
         <DescriptionBox.texts>
-          Follow your passion, instead of money. Passion will be the motivation
-          and energy source to achieve something big and let you move further
-          than what you expected.
+          Follow your passion, instead of money. Passion provides you more
+          motivation and energy to achieve something big and let you move
+          further than what you expected.
         </DescriptionBox.texts>
       </DescriptionBox.textBox>
     </DescriptionBox>

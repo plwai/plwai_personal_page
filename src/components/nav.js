@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import styled from 'react-emotion'
 
-import HeaderLink from './headerLink'
+import NavLink from './navLink'
 
 // temporary. will be replaced by graphql
 const linkData = [
@@ -33,11 +33,18 @@ const StyledNav = styled.nav`
   display: flex;
   padding-top: 0.6em;
   white-space: nowrap;
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0;
+    visibility: hidden;
+  }
 `
 
 class Nav extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       currentPage: 'About',
@@ -46,17 +53,19 @@ class Nav extends Component {
 
   render() {
     const { currentPage } = this.state
+    const { navRef, menuHandler } = this.props
 
     return (
-      <StyledNav>
+      <StyledNav innerRef={menu => navRef(menu)}>
         {linkData.map(({ title, to }) => (
-          <HeaderLink
+          <NavLink
+            onClick={() => menuHandler()}
             key={title}
             to={to}
             selected={currentPage === title ? true : false}
           >
             {title}
-          </HeaderLink>
+          </NavLink>
         ))}
       </StyledNav>
     )

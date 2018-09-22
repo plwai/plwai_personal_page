@@ -12,11 +12,50 @@ const StyledHeaderContainer = styled.div`
   align-items: center;
   height: 100px;
   background: #272c35;
-  marginbottom: '1.45rem';
   padding-left: 4em;
   padding-right: 4em;
   transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s;
   z-index: 999;
+
+  @media (max-width: 820px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    background: inherit;
+  }
+`
+
+const Container = styled.div`
+  @media (max-width: 820px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100px;
+    align-items: center;
+    background: #272c35;
+
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+`
+
+const MenuIconButton = styled.div`
+  cursor: pointer;
+`
+
+MenuIconButton.icon = styled.i`
+  display: none;
+  width: 36px;
+  height: 30px;
+  background-image: url('./img/baseline_menu_white_36dp.png');
+  background-repeat: no-repeat;
+
+  @media (max-width: 820px) {
+    display: block;
+  }
 `
 
 class Header extends Component {
@@ -29,34 +68,63 @@ class Header extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => this.handleScroll())
+    window.addEventListener('resize', () => this.handleResize())
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', () => this.handleScroll())
+    window.addEventListener('resize', () => this.handleResize())
   }
 
   handleScroll() {
-    if (this.nav === undefined) {
+    if (
+      this.nav === undefined ||
+      this.nav === null ||
+      window.innerWidth < 820
+    ) {
       return
     }
 
     if (
       window.scrollY > this.lastScrollY &&
-      window.scrollY - this.lastScrollY < 100
+      window.scrollY - this.lastScrollY < 500
     ) {
       this.nav.style.height = '0'
-      this.nav.style.padding = '0'
       this.nav.style.opacity = '0'
       this.nav.style.visibility = 'hidden'
     } else {
-      this.nav.style.height = '100px'
-      this.nav.style.paddingLeft = '4em'
-      this.nav.style.paddingRight = '4em'
-      this.nav.style.opacity = '100'
-      this.nav.style.visibility = 'visible'
+      this.nav.removeAttribute('style')
     }
 
     this.lastScrollY = window.scrollY
+  }
+
+  handleResize() {
+    if (this.menu === undefined || this.menu === null) {
+      return
+    }
+
+    if (this.nav === undefined || this.nav === null) {
+      return
+    }
+
+    if (window.innerWidth > 820) {
+      this.menu.removeAttribute('style')
+    } else {
+      this.nav.removeAttribute('style')
+    }
+  }
+
+  handleMenu() {
+    if (this.menu === undefined || this.menu === null) {
+      return
+    }
+
+    if (this.menu.style.visibility === 'visible') {
+      this.menu.removeAttribute('style')
+    } else {
+      this.menu.style.visibility = 'visible'
+    }
   }
 
   render() {
@@ -64,7 +132,7 @@ class Header extends Component {
 
     return (
       <StyledHeaderContainer innerRef={nav => (this.nav = nav)}>
-        <div>
+        <Container innerRef={el => (this.container = el)}>
           <h1 style={{ margin: 0 }}>
             <Link
               to={to}
@@ -76,8 +144,15 @@ class Header extends Component {
               {siteTitle}
             </Link>
           </h1>
-        </div>
-        <Nav />
+          <MenuIconButton onClick={() => this.handleMenu()}>
+            <MenuIconButton.icon />
+          </MenuIconButton>
+        </Container>
+
+        <Nav
+          navRef={menu => (this.menu = menu)}
+          menuHandler={() => this.handleMenu()}
+        />
       </StyledHeaderContainer>
     )
   }

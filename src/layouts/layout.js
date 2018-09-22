@@ -36,7 +36,7 @@ const PageLayout = ({ children }) => (
             },
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} to="" />
         <StyledContentContainer>{children}</StyledContentContainer>
       </div>
     )}
