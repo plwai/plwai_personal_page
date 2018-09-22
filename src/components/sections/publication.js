@@ -1,4 +1,4 @@
-import React from 'React'
+import React from 'react'
 import styled from 'react-emotion'
 import { withPrefix } from 'gatsby'
 
