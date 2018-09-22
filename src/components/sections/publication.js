@@ -34,6 +34,7 @@ PublicationContainer.title = styled.h2`
   margin-left: ${rhythm(1)};
   font-weight: 900;
   font-size: ${rhythm(2)};
+  width: 100%;
 
   @media (max-width: 1000px) {
     margin-top: ${rhythm(1)};
@@ -41,6 +42,7 @@ PublicationContainer.title = styled.h2`
 
   @media (max-width: 700px), (max-height: 670px) {
     display: flex;
+    margin: 0px;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -73,7 +75,7 @@ PublicationContainer.title = styled.h2`
         1 10%;
       -o-border-image: -o-linear-gradient(right, #e0e3e6, rgba(0, 0, 0, 0)) 1
         10%;
-      width: ${rhythm(5)};
+      width: 100%;
       margin: 0 1rem;
     }
 
@@ -100,7 +102,7 @@ PublicationContainer.title = styled.h2`
       -moz-border-image: -moz-linear-gradient(left, #e0e3e6, rgba(0, 0, 0, 0)) 1
         10%;
       -o-border-image: -o-linear-gradient(left, #e0e3e6, rgba(0, 0, 0, 0)) 1 10%;
-      width: ${rhythm(5)};
+      width: 100%;
       margin: 0 1rem;
     }
   }
@@ -112,6 +114,7 @@ PublicationContainer.gif = styled.img`
   margin-left: 0;
   width: 400px;
   height: 250px;
+  max-width: 100%;
 
   @media (max-width: 1020px) {
     margin-top: 5vh;
@@ -197,10 +200,8 @@ const LinkSVG = styled.img`
 const PublicationPage = () => (
   <div>
     <PublicationContainer>
-      <PublicationContainer.title>
-        <Anchor id="publication" top="-200px" />
-        Publication
-      </PublicationContainer.title>
+      <Anchor id="publication" top="-200px" />
+      <PublicationContainer.title>Publication</PublicationContainer.title>
       <PublicationContainer.gif
         src={withPrefix(`/img/SOM_Reconstruction.gif`)}
       />
