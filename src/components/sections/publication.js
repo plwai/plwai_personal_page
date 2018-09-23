@@ -199,8 +199,8 @@ const LinkSVG = styled.img`
 
 const PublicationPage = () => (
   <div>
+    <Anchor id="publication" top="-200px" />
     <PublicationContainer>
-      <Anchor id="publication" top="-200px" />
       <PublicationContainer.title>Publication</PublicationContainer.title>
       <PublicationContainer.gif
         src={withPrefix(`/img/SOM_Reconstruction.gif`)}
