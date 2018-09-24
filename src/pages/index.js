@@ -14,7 +14,7 @@ const PublicationBackground = styled.div`
   height: 100vh;
   z-index: -999;
 
-  @media (min-width: 700px) and (min-height: 671px) {
+  @media (min-width: 700px) and (min-height: 601px) {
     background-color: #cae0fe;
     -webkit-clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
     clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
