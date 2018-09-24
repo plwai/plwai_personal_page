@@ -17,7 +17,7 @@ const PublicationContainer = styled.div`
   margin: auto;
   width: 100%;
 
-  @media (max-width: 700px), (max-height: 670px) {
+  @media (max-width: 700px), (max-height: 600px) {
     display: flex;
     flex-direction: column;
 
@@ -40,7 +40,7 @@ PublicationContainer.title = styled.h2`
     margin-top: ${rhythm(1)};
   }
 
-  @media (max-width: 700px), (max-height: 670px) {
+  @media (max-width: 700px), (max-height: 600px) {
     display: flex;
     margin: 0px;
     align-items: center;
@@ -121,7 +121,7 @@ PublicationContainer.gif = styled.img`
     margin-left: 5vw;
   }
 
-  @media (max-height: 670px) {
+  @media (max-height: 600px) {
     margin-left: 0;
     margin-bottom: ${rhythm(1)};
   }
@@ -148,7 +148,7 @@ PublicationContainer.textDiv = styled.div`
     margin-top: ${rhythm(-4)};
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 700px), (max-height: 600px) {
     margin-top: ${rhythm(-1)};
     padding-left: ${rhythm(1.5)};
     padding-right: ${rhythm(1.5)};
@@ -163,7 +163,7 @@ PublicationContainer.publishName = styled.h3`
     margin-top: ${rhythm(1)};
   }
 
-  @media (max-height: 670px) {
+  @media (max-height: 600px) {
     margin-top: ${rhythm(1)};
   }
 `

@@ -80,9 +80,12 @@ TitleBox.title = styled.h2`
 `
 
 const DescriptionBox = styled.blockquote`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
-  height: 40vh;
-  min-height: 500px;
+  height: 100%;
+  min-height: 400px;
 
   color: #555555;
   font-size: 1.4em;
@@ -92,15 +95,17 @@ const DescriptionBox = styled.blockquote`
 
   position: relative;
   margin: 50px auto;
-  padding: 1.2em 30px 1.2em 0;
+  padding: 0 30px 0 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   border-left: 0;
   border-radius: 20px;
 
   background: #e2e2e2;
 
-  @media (max-width: 360px) {
-    min-height: 650px;
+  @media (max-width: 500px) {
+    min-height: 0;
   }
 `
 
@@ -109,57 +114,47 @@ DescriptionBox.smallBox = styled.div``
 DescriptionBox.textBox = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   @media (max-width: 500px) {
     flex-direction: column;
   }
 
   &:before {
+    align-self: flex-start;
     font-family: Arial;
     content: '\\201C';
     color: #373d4aab;
     font-size: 4em;
-    float: left;
-    margin-left: 5vw;
-    max-width: 50px;
+    height: 80px;
+    margin-left: 5%;
+    margin-right: 30px;
+    position: relative;
+    top: -40px;
 
     @media (max-width: 500px) {
-      margin-top: -40px;
+      display: none;
     }
   }
 
   &:after {
+    align-self: flex-end;
     content: '\\201D';
     color: #373d4aab;
     font-size: 4em;
+    margin-right: 5%;
     position: relative;
-    top: 200px;
-    left: 5%;
-    max-width: 50px;
-    max-height: 50px;
-
-    @media (max-width: 700px) {
-      top: 250px;
-    }
+    top: 100px;
 
     @media (max-width: 500px) {
-      margin-top: -130px;
-      top: 0;
-      left: 80%;
+      display: none;
     }
   }
 `
 
 DescriptionBox.texts = styled.p`
   position: relative;
-  left: 5%;
-  top: 10vh;
-  max-width: 70%;
-
-  @media (max-width: 500px) {
-    top: ${rhythm(-3)};
-    left: 70px;
-  }
+  max-width: 100%;
 `
 
 const MyBelief = () => (
