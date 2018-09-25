@@ -11,7 +11,7 @@ const Container = styled.div`
   padding-bottom: ${rhythm(7)};
   margin-top: 300px;
 
-  @media (max-width: 700px), (max-height: 670px) {
+  @media (max-width: 820px), (max-height: 670px) {
     margin-top: 0;
   }
 `

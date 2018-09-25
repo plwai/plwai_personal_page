@@ -17,7 +17,7 @@ const PublicationContainer = styled.div`
   margin: auto;
   width: 100%;
 
-  @media (max-width: 700px), (max-height: 600px) {
+  @media (max-width: 820px), (max-height: 600px) {
     display: flex;
     flex-direction: column;
 
@@ -40,7 +40,7 @@ PublicationContainer.title = styled.h2`
     margin-top: ${rhythm(1)};
   }
 
-  @media (max-width: 700px), (max-height: 600px) {
+  @media (max-width: 820px), (max-height: 600px) {
     display: flex;
     margin: 0px;
     align-items: center;
@@ -131,7 +131,7 @@ PublicationContainer.gif = styled.img`
     margin-bottom: ${rhythm(1)};
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 820px) {
     margin-left: 0;
     margin-bottom: ${rhythm(1)};
   }
@@ -148,7 +148,7 @@ PublicationContainer.textDiv = styled.div`
     margin-top: ${rhythm(-4)};
   }
 
-  @media (max-width: 700px), (max-height: 600px) {
+  @media (max-width: 820px), (max-height: 600px) {
     margin-top: ${rhythm(-1)};
     padding-left: ${rhythm(1.5)};
     padding-right: ${rhythm(1.5)};
@@ -174,7 +174,7 @@ PublicationContainer.linksDiv = styled.div``
 PublicationContainer.linksDiv.text = styled.p`
   margin: 0;
   font-weight: 600;
-  width: 85px;
+  width: 100%;
 
   &:after {
     content: ':';
@@ -211,12 +211,25 @@ const PublicationPage = () => (
         </PublicationContainer.publishName>
         <PublicationContainer.description>
           This article tackling the performance problem of large scale 3D point
-          cloud data. There are many different kinds of algorithms have been
-          proposed to solve this problem and Deep Learning is one of them. In
-          this article, a combination solution of Deep Learning concepts, Self
-          Organizing Map(SOM) and GPU parallel programming are proposed to solve
-          the performance problem of large scale 3D point cloud data.
+          cloud data. In this article, a combination solution of Deep Learning
+          concepts, Self Organizing Map(SOM) and GPU parallel programming are
+          proposed to solve the performance problem of large scale 3D point
+          cloud data. For more information, access the article and watch the
+          presentation by Dr. Shafaatunnur Hasan and Prof Dr. Siti Mariyam
+          Shamsuddin in Nvidia GTC 2018.
         </PublicationContainer.description>
+        <PublicationContainer.linksDiv>
+          <PublicationContainer.linksDiv.link
+            target="_blank"
+            href="http://on-demand.gputechconf.com/gtc/2018/video/S8425/"
+          >
+            <PublicationContainer.linksDiv.text>
+              GTC 2018
+            </PublicationContainer.linksDiv.text>
+
+            <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
+          </PublicationContainer.linksDiv.link>
+        </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
           <PublicationContainer.linksDiv.link
             target="_blank"
