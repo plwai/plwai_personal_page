@@ -33,9 +33,11 @@ ProfileContainer.description = styled.h4`
 const ProfilePage = () => (
   <ProfileContainer>
     <ProfileContainer.myPhoto src={photo} />
-    <ProfileContainer.myName>Pai Lee Wai</ProfileContainer.myName>
+    <ProfileContainer.myName>
+      <u>Wai</u> Pai Lee
+    </ProfileContainer.myName>
     <ProfileContainer.description>
-      Software developer interested in Rust, React, Nodejs, C/C++, Opengl
+      Software developer interested in Rust, React, Nodejs, C/C++, OpenGL
     </ProfileContainer.description>
   </ProfileContainer>
 )
