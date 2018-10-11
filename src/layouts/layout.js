@@ -37,7 +37,7 @@ const PageLayout = ({ children }) => (
             { name: 'description', content: 'Pai Lee Wai Personal Page' },
             {
               name: 'keywords',
-              content: 'Pai Lee Wai, Personal Page, Software Developer',
+              content: 'Wai Pai Lee, Personal Page, Software Developer',
             },
             {
               name: 'viewport',

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Pai Lee Wai',
+    title: 'Wai Pai Lee',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
