@@ -1,11 +1,10 @@
 // @flow
 
-import React, { Component } from 'react'
-import styled from 'react-emotion'
+import React, { Component } from 'react';
 
-import NavLink from './navLink'
+import NavLink from './navLink';
+import { StyledNav } from './styles/nav.style';
 
-// temporary. will be replaced by graphql
 const linkData = [
   {
     title: 'Top',
@@ -27,34 +26,29 @@ const linkData = [
     title: 'Contacts',
     to: '#contacts',
   },
-]
+];
 
-const StyledNav = styled.nav`
-  display: flex;
-  padding-top: 0.6em;
-  white-space: nowrap;
+type Props = {
+  navRef: Function,
+  menuHandler: Function,
+}
 
-  @media (max-width: 820px) {
-    flex-direction: column;
-    width: 100vw;
-    max-width: 100%;
-    padding-top: 0;
-    visibility: hidden;
-  }
-`
+type State = {
+  currentPage: string,
+}
 
-class Nav extends Component {
-  constructor(props) {
-    super(props)
+class Nav extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
 
     this.state = {
       currentPage: 'About',
-    }
+    };
   }
 
   render() {
-    const { currentPage } = this.state
-    const { navRef, menuHandler } = this.props
+    const { currentPage } = this.state;
+    const { navRef, menuHandler } = this.props;
 
     return (
       <StyledNav innerRef={menu => navRef(menu)}>
@@ -69,8 +63,8 @@ class Nav extends Component {
           </NavLink>
         ))}
       </StyledNav>
-    )
+    );
   }
 }
 
-export default Nav
+export default Nav;

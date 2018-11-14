@@ -1,24 +1,28 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import styled from 'react-emotion'
-import { StaticQuery, graphql } from 'gatsby'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled from 'react-emotion';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from '../components/header'
+import Header from '../components/header';
 
 const StyledContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 100%;
-`
+`;
 
 const BodyDiv = styled.div`
   max-width: 100vw;
   height: 100%;
-`
+`;
 
-const PageLayout = ({ children }) => (
+type Props = {
+  children: React.Node,
+}
+
+const PageLayout = ({ children }: Props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -55,11 +59,11 @@ const PageLayout = ({ children }) => (
       </BodyDiv>
     )}
   />
-)
+);
 
 PageLayout.propTypes = {
   children: PropTypes.array,
   data: PropTypes.any,
-}
+};
 
-export default PageLayout
+export default PageLayout;
