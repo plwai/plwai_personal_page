@@ -1,11 +1,10 @@
 // @flow
 
 import React, { Component } from 'react';
-import styled from 'react-emotion';
 
 import NavLink from './navLink';
+import { StyledNav } from './styles/nav.style';
 
-// temporary. will be replaced by graphql
 const linkData = [
   {
     title: 'Top',
@@ -28,20 +27,6 @@ const linkData = [
     to: '#contacts',
   },
 ];
-
-const StyledNav = styled.nav`
-  display: flex;
-  padding-top: 0.6em;
-  white-space: nowrap;
-
-  @media (max-width: 820px) {
-    flex-direction: column;
-    width: 100vw;
-    max-width: 100%;
-    padding-top: 0;
-    visibility: hidden;
-  }
-`;
 
 type Props = {
   navRef: Function,
