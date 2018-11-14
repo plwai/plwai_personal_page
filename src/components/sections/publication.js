@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { withPrefix } from 'gatsby'
+import React from 'react';
+import styled from 'react-emotion';
+import { withPrefix } from 'gatsby';
 
-import Anchor from '../anchor'
-import { rhythm } from '../../utils/typography'
+import Anchor from '../anchor';
+import { rhythm } from '../../utils/typography';
 
 const PublicationContainer = styled.div`
   display: grid;
@@ -27,7 +27,7 @@ const PublicationContainer = styled.div`
   @media (max-width: 480px) {
     max-width: 100%;
   }
-`
+`;
 
 PublicationContainer.title = styled.h2`
   grid-area: title;
@@ -106,7 +106,7 @@ PublicationContainer.title = styled.h2`
       margin: 0 1rem;
     }
   }
-`
+`;
 
 PublicationContainer.gif = styled.img`
   grid-area: gif;
@@ -135,7 +135,7 @@ PublicationContainer.gif = styled.img`
     margin-left: 0;
     margin-bottom: ${rhythm(1)};
   }
-`
+`;
 PublicationContainer.textDiv = styled.div`
   grid-area: text;
   max-width: 500px;
@@ -153,7 +153,7 @@ PublicationContainer.textDiv = styled.div`
     padding-left: ${rhythm(1.5)};
     padding-right: ${rhythm(1.5)};
   }
-`
+`;
 
 PublicationContainer.publishName = styled.h3`
   font-weight: 700;
@@ -166,11 +166,11 @@ PublicationContainer.publishName = styled.h3`
   @media (max-height: 600px) {
     margin-top: ${rhythm(1)};
   }
-`
+`;
 
-PublicationContainer.description = styled.p``
+PublicationContainer.description = styled.p``;
 
-PublicationContainer.linksDiv = styled.div``
+PublicationContainer.linksDiv = styled.div``;
 PublicationContainer.linksDiv.text = styled.p`
   margin: 0;
   font-weight: 600;
@@ -180,7 +180,7 @@ PublicationContainer.linksDiv.text = styled.p`
     content: ':';
     margin-right: ${rhythm(0.2)};
   }
-`
+`;
 PublicationContainer.linksDiv.link = styled.a`
   display: flex;
   text-decoration: none;
@@ -190,12 +190,12 @@ PublicationContainer.linksDiv.link = styled.a`
   &:hover {
     color: inherit;
   }
-`
+`;
 
 const LinkSVG = styled.img`
   margin: 0;
   margin-top: ${rhythm(0.1)};
-`
+`;
 
 const PublicationPage = () => (
   <div>
@@ -203,7 +203,7 @@ const PublicationPage = () => (
     <PublicationContainer>
       <PublicationContainer.title>Publication</PublicationContainer.title>
       <PublicationContainer.gif
-        src={withPrefix(`/img/SOM_Reconstruction.gif`)}
+        src={withPrefix('/img/SOM_Reconstruction.gif')}
       />
       <PublicationContainer.textDiv>
         <PublicationContainer.publishName>
@@ -227,7 +227,7 @@ const PublicationPage = () => (
               GTC 2018
             </PublicationContainer.linksDiv.text>
 
-            <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
+            <LinkSVG src={withPrefix('/img/baseline-open_in_new-24px.svg')} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
@@ -239,7 +239,7 @@ const PublicationPage = () => (
               Article
             </PublicationContainer.linksDiv.text>
 
-            <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
+            <LinkSVG src={withPrefix('/img/baseline-open_in_new-24px.svg')} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
@@ -251,7 +251,7 @@ const PublicationPage = () => (
               Website
             </PublicationContainer.linksDiv.text>
 
-            <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
+            <LinkSVG src={withPrefix('/img/baseline-open_in_new-24px.svg')} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
         <PublicationContainer.linksDiv>
@@ -263,12 +263,12 @@ const PublicationPage = () => (
               Github
             </PublicationContainer.linksDiv.text>
 
-            <LinkSVG src={withPrefix(`/img/baseline-open_in_new-24px.svg`)} />
+            <LinkSVG src={withPrefix('/img/baseline-open_in_new-24px.svg')} />
           </PublicationContainer.linksDiv.link>
         </PublicationContainer.linksDiv>
       </PublicationContainer.textDiv>
     </PublicationContainer>
   </div>
-)
+);
 
-export default PublicationPage
+export default PublicationPage;

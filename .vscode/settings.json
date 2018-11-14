@@ -9,6 +9,5 @@
   "prettier.eslintIntegration": true,
   "files.associations": {
     "*.js": "javascriptreact"
-  },
-  "prettier.singleQuote": true
+  }
 }

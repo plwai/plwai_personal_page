@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'react-emotion'
+import React from 'react';
+import styled from 'react-emotion';
 
-import PageLayout from '../layouts/layout'
-import ProfilePage from '../components/sections/profile'
-import ProjectPage from '../components/sections/project'
-import PublicationPage from '../components/sections/publication'
-import MyBelief from '../components/sections/belief'
-import SocialLinks from '../components/socialLinks'
+import PageLayout from '../layouts/layout';
+import ProfilePage from '../components/sections/profile';
+import ProjectPage from '../components/sections/project';
+import PublicationPage from '../components/sections/publication';
+import MyBelief from '../components/sections/belief';
+import SocialLinks from '../components/socialLinks';
 
 const PublicationBackground = styled.div`
   position: absolute;
@@ -19,11 +19,11 @@ const PublicationBackground = styled.div`
     -webkit-clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
     clip-path: polygon(0 30%, 0 80%, 100% 100vh, 100% 0);
   }
-`
+`;
 
 const MaxWidthDiv = styled.div`
   width: 100%;
-`
+`;
 
 const IndexPage = () => (
   <PageLayout>
@@ -36,6 +36,6 @@ const IndexPage = () => (
     <MyBelief />
     <SocialLinks />
   </PageLayout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

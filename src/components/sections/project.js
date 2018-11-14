@@ -1,18 +1,20 @@
-import React from 'react'
-import styled from 'react-emotion'
-import { StaticQuery, graphql, withPrefix } from 'gatsby'
-import { generate } from 'shortid'
+// @flow
 
-import Anchor from '../anchor'
-import { rhythm } from '../../utils/typography'
+import React from 'react';
+import styled from 'react-emotion';
+import { StaticQuery, graphql, withPrefix } from 'gatsby';
+import { generate } from 'shortid';
+
+import Anchor from '../anchor';
+import { rhythm } from '../../utils/typography';
 
 const ProjectPageContainer = styled.div`
   padding-bottom: ${rhythm(5)};
   max-width: 1000px;
   width: 100%;
-`
+`;
 
-const StyledPageTitleDiv = styled.div``
+const StyledPageTitleDiv = styled.div``;
 
 StyledPageTitleDiv.title = styled.h2`
   display: flex;
@@ -72,7 +74,7 @@ StyledPageTitleDiv.title = styled.h2`
     width: ${rhythm(20)};
     margin: 0 1rem;
   }
-`
+`;
 
 const ProjectGrid = styled.div`
   display: grid;
@@ -88,7 +90,7 @@ const ProjectGrid = styled.div`
   @media (max-width: 700px) {
     width: 300px;
   }
-`
+`;
 
 ProjectGrid.component = styled.div`
   border: 1px solid #dbe1e6;
@@ -96,7 +98,7 @@ ProjectGrid.component = styled.div`
   box-shadow: 0 0 5px #c4c7ca;
 
   padding: ${rhythm(0.25)};
-`
+`;
 
 ProjectGrid.component.title = styled.h4`
   margin: 0;
@@ -107,7 +109,7 @@ ProjectGrid.component.title = styled.h4`
   font-weight: 900;
   text-align: center;
   color: #273740;
-`
+`;
 
 ProjectGrid.component.text = styled.p`
   margin: 0;
@@ -126,7 +128,7 @@ ProjectGrid.component.text = styled.p`
   text-rendering: optimizeLegibility;
   font-size: 0.87055rem;
   line-height: 1.1;
-`
+`;
 
 ProjectGrid.component.techText = styled.p`
   margin: 0;
@@ -141,23 +143,27 @@ ProjectGrid.component.techText = styled.p`
   font-size: 0.81225rem;
   line-height: 1.1;
   font-style: italic;
-`
+`;
 
 ProjectGrid.component.img = styled.img`
   margin: 0;
   height: 150px;
   width: 300px;
-`
+`;
 
 ProjectGrid.component.hyperlink = styled.a`
   text-decoration: none;
-`
+`;
 
 const FlexDiv = styled.div`
   display: flex;
-`
+`;
 
-const ProjectPage = ({ data }) => (
+type Props = {
+  _n_data: any,
+}
+
+const ProjectPage = ({ _n_data }: Props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -192,7 +198,7 @@ const ProjectPage = ({ data }) => (
               node: {
                 frontmatter: { projects },
               },
-            } = nodes
+            } = nodes;
 
             return projects.map(project => (
               <ProjectGrid.component key={generate()}>
@@ -222,12 +228,12 @@ const ProjectPage = ({ data }) => (
                   </FlexDiv>
                 </ProjectGrid.component.hyperlink>
               </ProjectGrid.component>
-            ))
+            ));
           })}
         </ProjectGrid>
       </ProjectPageContainer>
     )}
   />
-)
+);
 
-export default ProjectPage
+export default ProjectPage;

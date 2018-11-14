@@ -3,26 +3,44 @@
   "description": "Pai Lee Wai Personal Page",
   "version": "1.0.0",
   "author": "Pai Lee Wai <pailee.wai@gmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.86.0",
+    "prettier": "^1.15.2"
+  },
   "dependencies": {
     "babel-plugin-emotion": "^9.2.11",
     "create-emotion-styled": "^9.2.8",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
-    "gatsby": "^2.0.37",
+    "gatsby": "^2.0.48",
     "gatsby-link": "^2.0.6",
     "gatsby-plugin-emotion": "^2.0.6",
+    "gatsby-plugin-flow": "^1.0.2",
     "gatsby-plugin-google-analytics": "^2.0.7",
-    "gatsby-plugin-react-helmet": "^3.0.1",
+    "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-typography": "^2.2.1",
-    "gatsby-source-filesystem": "^2.0.7",
-    "gatsby-transformer-remark": "^2.1.11",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "gatsby-source-filesystem": "^2.0.8",
+    "gatsby-transformer-remark": "^2.1.12",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
     "react-social-icons": "^3.0.0",
     "react-typography": "^0.16.13",
-    "shortid": "^2.2.13",
+    "shortid": "^2.2.14",
     "typography": "^0.16.17",
     "typography-theme-kirkham": "^0.16.3",
     "typography-theme-stern-grove": "^0.15.10"
@@ -32,16 +50,6 @@
     "github-page"
   ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "flow": "^0.2.3",
-    "prettier": "^1.14.3"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/plwai/plwai_github_page"

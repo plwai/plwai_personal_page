@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'react-emotion'
+import React from 'react';
+import styled from 'react-emotion';
+import { rhythm } from '../../utils/typography';
 
-import Anchor from '../anchor'
-import { rhythm } from '../../utils/typography'
+import Anchor from '../anchor';
 
 const Container = styled.div`
   max-width: 1000px;
@@ -14,9 +14,9 @@ const Container = styled.div`
   @media (max-width: 820px), (max-height: 670px) {
     margin-top: 0;
   }
-`
+`;
 
-const TitleBox = styled.div``
+const TitleBox = styled.div``;
 
 TitleBox.title = styled.h2`
   display: flex;
@@ -77,7 +77,7 @@ TitleBox.title = styled.h2`
     width: ${rhythm(20)};
     margin: 0 1rem;
   }
-`
+`;
 
 const DescriptionBox = styled.blockquote`
   display: flex;
@@ -107,9 +107,9 @@ const DescriptionBox = styled.blockquote`
   @media (max-width: 500px) {
     min-height: 0;
   }
-`
+`;
 
-DescriptionBox.smallBox = styled.div``
+DescriptionBox.smallBox = styled.div``;
 
 DescriptionBox.textBox = styled.div`
   display: flex;
@@ -150,12 +150,12 @@ DescriptionBox.textBox = styled.div`
       display: none;
     }
   }
-`
+`;
 
 DescriptionBox.texts = styled.p`
   position: relative;
   max-width: 100%;
-`
+`;
 
 const MyBelief = () => (
   <Container>
@@ -173,6 +173,6 @@ const MyBelief = () => (
       </DescriptionBox.textBox>
     </DescriptionBox>
   </Container>
-)
+);
 
-export default MyBelief
+export default MyBelief;

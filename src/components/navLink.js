@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react'
-import Link from 'gatsby-link'
-import styled, { css } from 'react-emotion'
+import * as React from 'react';
+import Link from 'gatsby-link';
+import styled, { css } from 'react-emotion';
 
 const NavLinkText = styled.h4`
   margin: 0;
@@ -19,9 +19,9 @@ const NavLinkText = styled.h4`
       background-color: #1b69b7;
     }
   }
-`
+`;
 
-const StyledLink = selected =>
+const StyledLink = _n_selected =>
   css`
     color: white;
     padding: 0.4em;
@@ -37,14 +37,21 @@ const StyledLink = selected =>
         color: white;
       }
     }
-  `
+  `;
 
-const NavLink = ({ children, onClick, to, selected = false }) => (
+type Props = {
+  children: React.Node,
+  onClick: Function,
+  to: string,
+  selected: boolean,
+}
+
+const NavLink = ({ children, onClick, to, selected = false }: Props) => (
   <NavLinkText>
     <Link onClick={() => onClick()} to={to} className={StyledLink(selected)}>
       {children}
     </Link>
   </NavLinkText>
-)
+);
 
-export default NavLink
+export default NavLink;
