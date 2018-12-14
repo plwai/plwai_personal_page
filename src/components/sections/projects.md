@@ -2,6 +2,13 @@
 projects:
   [
     {
+      title: 'Obsidian',
+      url: 'https://github.com/jk-gan/obsidian',
+      description: 'Web development framework in Rust',
+      screenshot: 'work-in-progress.JPG',
+      technology: 'Rust, Trie',
+    },
+    {
       title: 'GPUMLib - SOM Surface Reconstruction',
       url: 'http://gpumlib.sourceforge.net/',
       description: 'Surface reconstruction feature of point cloud data in GPUMLib',
@@ -14,6 +21,13 @@ projects:
       description: 'Download manager with Aria2 as the download engine',
       screenshot: 'adm.PNG',
       technology: 'Electron, React, C/C++, N-API',
+    },
+    {
+      title: 'Movie and Chill',
+      url: 'https://musing-fermat-6f94d6.netlify.com/',
+      description: 'An simple moviedb api App',
+      screenshot: 'movie-and-chill.PNG',
+      technology: 'React, Redux, React Router, MovieDB-api',
     },
     {
       title: 'Simple Opengl Engine',
