@@ -1,4 +1,17 @@
+const proxy = require('http-proxy-middleware');
+
 module.exports = {
+  developMiddleware: app => {
+    app.use(
+      '/mediumAPI/',
+      proxy({
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '/mediumAPI/': '',
+        },
+      })
+    );
+  },
   siteMetadata: {
     title: 'Wai Pai Lee',
   },

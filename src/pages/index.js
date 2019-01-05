@@ -6,6 +6,7 @@ import ProfilePage from '../components/sections/profile';
 import ProjectPage from '../components/sections/project';
 import PublicationPage from '../components/sections/publication';
 import MyBelief from '../components/sections/belief';
+import BlogPage from '../components/sections/blog';
 import SocialLinks from '../components/socialLinks';
 
 const PublicationBackground = styled.div`
@@ -34,6 +35,7 @@ const IndexPage = () => (
     </MaxWidthDiv>
     <PublicationPage />
     <MyBelief />
+    <BlogPage />
     <SocialLinks />
   </PageLayout>
 );
