@@ -14,7 +14,7 @@ type Props = {
 
 const NavLink = ({ children, onClick, to, selected = false }: Props) => (
   <NavLinkText>
-    <Link onClick={() => onClick()} to={to} className={StyledLink(selected)}>
+    <Link onClick={() => onClick()} to={to} css={StyledLink(selected)}>
       {children}
     </Link>
   </NavLinkText>

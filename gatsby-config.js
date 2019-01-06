@@ -2,6 +2,7 @@ const proxy = require('http-proxy-middleware');
 
 module.exports = {
   developMiddleware: app => {
+    // For netlify lambda cli tool
     app.use(
       '/mediumAPI/',
       proxy({

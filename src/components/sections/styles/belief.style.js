@@ -1,11 +1,11 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 import { rhythm } from '../../../utils/typography';
 
 export const Container = styled.div`
   max-width: 1000px;
   width: 100%;
   padding: ${rhythm(1)};
-  padding-bottom: ${rhythm(7)};
+  padding-bottom: ${rhythm(3)};
   margin-top: 300px;
 
   @media (max-width: 820px), (max-height: 670px) {

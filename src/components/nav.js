@@ -55,7 +55,7 @@ class Nav extends Component<Props, State> {
     const { navRef, menuHandler } = this.props;
 
     return (
-      <StyledNav innerRef={menu => navRef(menu)}>
+      <StyledNav ref={menu => navRef(menu)}>
         {linkData.map(({ title, to }) => (
           <NavLink
             onClick={() => menuHandler()}

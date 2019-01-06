@@ -79,6 +79,7 @@ class Header extends Component<Props> {
       this.menu.removeAttribute('style');
     } else {
       this.menu.style.visibility = 'visible';
+      this.menu.style.display = 'flex';
     }
   }
 
@@ -86,8 +87,8 @@ class Header extends Component<Props> {
     const { siteTitle, to } = this.props;
 
     return (
-      <StyledHeaderContainer innerRef={nav => (this.nav = nav)}>
-        <Container innerRef={el => (this.container = el)}>
+      <StyledHeaderContainer ref={nav => (this.nav = nav)}>
+        <Container ref={el => (this.container = el)}>
           <h1 style={{ margin: 0 }}>
             <Link
               to={to}
