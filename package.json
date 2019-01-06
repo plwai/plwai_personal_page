@@ -21,6 +21,7 @@
     "flow": "^0.2.3",
     "flow-bin": "^0.89.0",
     "http-proxy-middleware": "^0.19.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.15.2"
   },
   "dependencies": {
