@@ -1,21 +1,14 @@
 import styled from '@emotion/styled';
 import { rhythm } from '../../../utils/typography';
 
-export const Container = styled.div`
+export const BlogContainer = styled.div`
   max-width: 1000px;
   width: 100%;
   padding: ${rhythm(1)};
-  padding-bottom: ${rhythm(3)};
-  margin-top: 300px;
-
-  @media (max-width: 820px), (max-height: 670px) {
-    margin-top: 0;
-  }
+  padding-bottom: ${rhythm(7)};
 `;
 
-export const TitleBox = styled.div``;
-
-TitleBox.title = styled.h2`
+export const PostTitle = styled.h2`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,80 +69,95 @@ TitleBox.title = styled.h2`
   }
 `;
 
-export const DescriptionBox = styled.blockquote`
+export const PostContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+`;
+
+export const Post = styled.div`
+  display: grid;
+  grid-template-areas:
+    'title date'
+    'subTitle claps';
+  grid-template-columns: 0.8fr 0.2fr;
+
+  padding: ${rhythm(0.25)};
+
+  @media (max-width: 555px) {
+    grid-template-areas:
+      'title'
+      'subTitle'
+      'date'
+      'claps';
+
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const PostHyperLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+
   width: 100%;
-  height: 100%;
-  min-height: 400px;
+  border: 1px solid #dbe1e6;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #c4c7ca;
+  margin-bottom: 10px;
 
-  color: #555555;
-  font-size: 1.4em;
-  font-family: Open Sans;
-  font-style: italic;
-  line-height: 1.6;
-
-  position: relative;
-  margin: 50px auto;
-  padding: 0 30px 0 30px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  border-left: 0;
-  border-radius: 20px;
-
-  background: #e2e2e2;
-
-  @media (max-width: 500px) {
-    min-height: 0;
+  &:hover {
+    color: inherit;
   }
 `;
 
-DescriptionBox.smallBox = styled.div``;
+Post.Title = styled.p`
+  grid-area: title;
+  margin-bottom: 0px;
 
-DescriptionBox.textBox = styled.div`
+  font-weight: 900;
+  font-size: ${rhythm(0.7)};
+
+  @media (max-width: 555px) {
+    justify-self: center;
+  }
+`;
+
+Post.SubTitle = styled.p`
+  grid-area: subTitle;
+  margin-bottom: 0px;
+
+  font-weight: 150;
+  font-size: ${rhythm(0.6)};
+
+  @media (max-width: 555px) {
+    justify-self: center;
+  }
+`;
+
+Post.Date = styled.p`
+  grid-area: date;
+  justify-self: end;
+  margin-bottom: 0px;
+
+  @media (max-width: 555px) {
+    justify-self: center;
+  }
+`;
+
+Post.TotalClaps = styled.p`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  grid-area: claps;
+  justify-self: end;
+  margin-bottom: 0px;
 
-  @media (max-width: 500px) {
-    flex-direction: column;
-  }
-
-  &:before {
-    align-self: flex-start;
-    font-family: Arial;
-    content: '\\201C';
-    color: #373d4aab;
-    font-size: 4em;
-    height: 80px;
-    margin-left: 5%;
-    margin-right: 30px;
-    position: relative;
-    top: -40px;
-
-    @media (max-width: 500px) {
-      display: none;
-    }
-  }
-
-  &:after {
-    align-self: flex-end;
-    content: '\\201D';
-    color: #373d4aab;
-    font-size: 4em;
-    margin-right: 5%;
-    position: relative;
-    top: 100px;
-
-    @media (max-width: 500px) {
-      display: none;
-    }
+  @media (max-width: 555px) {
+    justify-self: center;
   }
 `;
 
-DescriptionBox.texts = styled.p`
-  position: relative;
-  max-width: 100%;
+export const ViewMore = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: ${rhythm(0.7)};
+  color: #666fb3;
 `;

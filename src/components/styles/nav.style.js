@@ -1,4 +1,4 @@
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 export const StyledNav = styled.nav`
   display: flex;
@@ -11,5 +11,6 @@ export const StyledNav = styled.nav`
     max-width: 100%;
     padding-top: 0;
     visibility: hidden;
+    display: none;
   }
 `;
