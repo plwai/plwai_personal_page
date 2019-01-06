@@ -4,9 +4,11 @@
   "version": "1.0.1",
   "author": "Pai Lee Wai <pailee.wai@gmail.com>",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "run-p build:**",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/.netlify/functions"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
