@@ -11,5 +11,6 @@ export const StyledNav = styled.nav`
     max-width: 100%;
     padding-top: 0;
     visibility: hidden;
+    display: none;
   }
 `;
