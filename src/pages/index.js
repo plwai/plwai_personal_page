@@ -1,11 +1,12 @@
 import React from 'react';
-import styled from 'react-emotion';
+import styled from '@emotion/styled';
 
 import PageLayout from '../layouts/layout';
 import ProfilePage from '../components/sections/profile';
 import ProjectPage from '../components/sections/project';
 import PublicationPage from '../components/sections/publication';
 import MyBelief from '../components/sections/belief';
+import BlogPage from '../components/sections/blog';
 import SocialLinks from '../components/socialLinks';
 
 const PublicationBackground = styled.div`
@@ -34,6 +35,7 @@ const IndexPage = () => (
     </MaxWidthDiv>
     <PublicationPage />
     <MyBelief />
+    <BlogPage />
     <SocialLinks />
   </PageLayout>
 );
