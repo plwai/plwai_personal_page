@@ -1,5 +1,5 @@
 export const getMediumPost = async () => {
-  const response = await fetch('/mediumAPI');
+  const response = await fetch('/.netlify/functions/mediumApi');
 
   const {
     payload: {
