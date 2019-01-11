@@ -59,18 +59,20 @@ class BlogPage extends Component {
         latestPublishedAt,
         previewContent: {
           bodyModel: { paragraphs },
+          subtitle
         },
         virtuals: { totalClapCount },
         uniqueSlug,
+        title,
       } = data[key];
 
-      const title = paragraphs.find(({ name }) => name === 'previewTitle') || {
-        text: '',
+      const selectedTitle = paragraphs.find(({ name }) => name === 'previewTitle') || {
+        text: title,
       };
 
-      const subtitle = paragraphs.find(
+      const selectedSubtitle = paragraphs.find(
         ({ name }) => name === 'previewSubtitle'
-      ) || { text: '' };
+      ) || { text: subtitle };
 
       const date = new Date(latestPublishedAt);
 
@@ -81,8 +83,8 @@ class BlogPage extends Component {
           target="_blank"
         >
           <Post>
-            <Post.Title>{title.text}</Post.Title>{' '}
-            <Post.SubTitle>{subtitle.text}</Post.SubTitle>
+            <Post.Title>{selectedTitle.text}</Post.Title>{' '}
+            <Post.SubTitle>{selectedSubtitle.text}</Post.SubTitle>
             <Post.Date>{`${date.getDate()}/${date.getMonth() +
               1}/${date.getFullYear()}`}</Post.Date>
             <Post.TotalClaps>
