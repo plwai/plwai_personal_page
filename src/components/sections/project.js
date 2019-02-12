@@ -33,7 +33,6 @@ const ProjectPage = ({ _n_data }: Props) => (
                   description
                   technology
                 }
-                _PARENT
               }
             }
           }
