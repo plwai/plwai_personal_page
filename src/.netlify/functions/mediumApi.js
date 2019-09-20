@@ -19,19 +19,22 @@ exports.handler = (event, context, callback) => {
           .text()
           .then(data => {
             const realData = data.replace('])}while(1);</x>', '')
+
+            // Throw error for reCaptcha
             const response = JSON.parse(realData)
 
             callback(null, { statusCode: 200, body: realData })
           })
           .catch(error => {
-            fetch(githubUrl, {
+            /* fetch(githubUrl, {
               method: 'POST',
               headers: {
                 Authorization: `token ${githubEventToken}`,
                 Accept: 'application/vnd.github.everest-preview+json',
               },
               body: JSON.stringify({ event_type: githubEvent }),
-            }).then(res => callback(null, { statusCode: 408, body: error }))
+            }).then(res => callback(null, { statusCode: 408, body: error })) */
+            callback(null, { statusCode: 408, body: error })
           })
       })
       .catch(error => callback(null, { statusCode: 408, body: error }))
