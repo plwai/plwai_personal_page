@@ -1,6 +1,6 @@
 name: MediumApiCheck
 
-on: repository_dispatch
+on: [repository_dispatch, push, schedule]
   push:
     branches:    
       - master 
