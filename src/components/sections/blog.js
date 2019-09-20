@@ -15,7 +15,7 @@ import Anchor from '../anchor';
 const mediumBaseUrl = 'https://medium.com/@pailee.wai/';
 const mediumPostMax = 5;
 
-const generatePosts = data => {
+const Posts = ({ data }) => {
   const postKeys = Array.from(Object.keys(data));
 
   return postKeys.slice(0, mediumPostMax).map(key => {
@@ -65,20 +65,9 @@ const generatePosts = data => {
   });
 };
 
-const generateLoading = () => {
-  return (
-    <ReactLoading
-      type={'bars'}
-      color={'#454545'}
-      height={'100px'}
-      width={'100px'}
-    />
-  );
-};
-
 const BlogPage = () => {
   const [data, setData] = useState({});
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   const [isError, setError] = useState(false);
 
   async function fetchPosts() {
@@ -105,7 +94,16 @@ const BlogPage = () => {
       <PostTitle>Blog Articles</PostTitle>
       {isError && <center>Failed to fetch data...</center>}
       <PostContainer>
-        {isLoading ? generateLoading() : generatePosts(data)}
+        {isLoading ? (
+          <ReactLoading
+            type={'bars'}
+            color={'#454545'}
+            height={'100px'}
+            width={'100px'}
+          />
+        ) : (
+          <Posts data={data} />
+        )}
         {!isLoading && (
           <PostHyperLink href={`${mediumBaseUrl}`} target="_blank">
             <ViewMore>View More</ViewMore>

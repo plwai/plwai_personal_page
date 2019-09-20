@@ -1,6 +1,12 @@
 import fetch from 'node-fetch'
 
-import { mediumUrl } from './utils/config'
+import {
+  mediumUrl,
+  githubEventToken,
+  githubEvent,
+  githubUrl,
+} from './utils/config'
+import { log } from 'util'
 
 // eslint-disable-next-line no-undef
 exports.handler = (event, context, callback) => {
@@ -13,12 +19,20 @@ exports.handler = (event, context, callback) => {
           .text()
           .then(data => {
             const realData = data.replace('])}while(1);</x>', '')
-
             const response = JSON.parse(realData)
 
-            callback(null, { statusCode: 200, body: JSON.stringify(response) })
+            callback(null, { statusCode: 200, body: realData })
           })
-          .catch(error => callback(null, { statusCode: 408, body: error }))
+          .catch(error => {
+            fetch(githubUrl, {
+              method: 'POST',
+              headers: {
+                Authorization: `token ${githubEventToken}`,
+                Accept: 'application/vnd.github.everest-preview+json',
+              },
+              body: JSON.stringify({ event_type: githubEvent }),
+            }).then(res => callback(null, { statusCode: 408, body: error }))
+          })
       })
       .catch(error => callback(null, { statusCode: 408, body: error }))
   }

@@ -1,17 +1,17 @@
-const proxy = require('http-proxy-middleware');
+const proxy = require('http-proxy-middleware')
 
 module.exports = {
   developMiddleware: app => {
     // For netlify lambda cli tool
     app.use(
-      '/mediumAPI/',
+      '/.netlify/functions/',
       proxy({
         target: 'http://localhost:9000',
         pathRewrite: {
-          '/mediumAPI/': '',
+          '/.netlify/functions/': '',
         },
       })
-    );
+    )
   },
   siteMetadata: {
     title: 'Wai Pai Lee',
@@ -45,4 +45,4 @@ module.exports = {
       },
     },
   ],
-};
+}
