@@ -4,6 +4,7 @@ on:
   push:
     branches:    
       - master 
+  repository_dispatch
   schedule:
   - cron: 0 2 * * 0-6
 
@@ -15,6 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run random command which throw error
-   # - if: github.event_name == 'repository_dispatch'
+    - if: github.event_name == 'repository_dispatch'
       run: cargo test
         
