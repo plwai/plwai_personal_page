@@ -14,6 +14,12 @@ exports.handler = (event, context, callback) => {
           .then(data => {
             const realData = data.replace('])}while(1);</x>', '')
 
+            const {
+              payload: {
+                references: { Post },
+              },
+            } = JSON.parse(realData)
+
             callback(null, { statusCode: 200, body: realData })
           })
           .catch(error => callback(null, { statusCode: 408, body: error }))
