@@ -16,6 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run random command which throw error
+      run: echo "action!!!"
     - if: github.event_name == 'repository_dispatch'
       run: cargo test
         
