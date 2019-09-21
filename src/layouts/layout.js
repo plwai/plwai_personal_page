@@ -20,7 +20,7 @@ const BodyDiv = styled.div`
 
 type Props = {
   children: React.Node,
-}
+};
 
 const PageLayout = ({ children }: Props) => (
   <StaticQuery
@@ -54,7 +54,7 @@ const PageLayout = ({ children }: Props) => (
             },
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} to="" />
+        <Header siteTitle={data.site.siteMetadata.title} to="#" />
         <StyledContentContainer>{children}</StyledContentContainer>
       </BodyDiv>
     )}

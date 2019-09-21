@@ -1,7 +1,7 @@
 {
   "name": "plwai-personal-page",
   "description": "Pai Lee Wai Personal Page",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "Pai Lee Wai <pailee.wai@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
@@ -22,7 +22,7 @@
     "flow-bin": "^0.92.1",
     "http-proxy-middleware": "^0.19.1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.16.4"
+    "prettier": "^1.18.2"
   },
   "dependencies": {
     "@emotion/core": "^10.0.7",
@@ -34,6 +34,7 @@
     "gatsby": "^2.0.118",
     "gatsby-link": "^2.0.10",
     "gatsby-plugin-emotion": "^4.0.3",
+    "gatsby-plugin-favicon": "^3.1.6",
     "gatsby-plugin-flow": "^1.0.2",
     "gatsby-plugin-google-analytics": "^2.0.13",
     "gatsby-plugin-react-helmet": "^3.0.6",
@@ -43,7 +44,7 @@
     "netlify-lambda": "^1.3.3",
     "node-fetch": "^2.3.0",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react-dom": "npm:@hot-loader/react-dom",
     "react-emotion": "^10.0.0",
     "react-helmet": "^5.2.0",
     "react-loading": "^2.0.3",

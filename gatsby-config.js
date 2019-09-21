@@ -19,6 +19,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-flow',
+    `gatsby-plugin-favicon`,
     'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-emotion',

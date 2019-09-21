@@ -15,7 +15,7 @@ import {
 
 type Props = {
   _n_data: any,
-}
+};
 
 const ProjectPage = ({ _n_data }: Props) => (
   <StaticQuery
