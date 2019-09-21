@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link';
 
 import Nav from './nav';
 import {
@@ -90,15 +89,15 @@ class Header extends Component<Props> {
       <StyledHeaderContainer ref={nav => (this.nav = nav)}>
         <Container ref={el => (this.container = el)}>
           <h1 style={{ margin: 0 }}>
-            <Link
-              to={to}
+            <a
+              href={to}
               style={{
                 color: 'white',
                 textDecoration: 'none',
               }}
             >
               {siteTitle}
-            </Link>
+            </a>
           </h1>
           <MenuIconButton onClick={() => this.handleMenu()}>
             <MenuIconButton.icon />
