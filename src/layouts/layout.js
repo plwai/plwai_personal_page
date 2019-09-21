@@ -20,7 +20,7 @@ const BodyDiv = styled.div`
 
 type Props = {
   children: React.Node,
-}
+};
 
 const PageLayout = ({ children }: Props) => (
   <StaticQuery

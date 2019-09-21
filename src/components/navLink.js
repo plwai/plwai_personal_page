@@ -8,8 +8,8 @@ type Props = {
   children: React.Node,
   onClick: Function,
   to: string,
-  selected: boolean,
-}
+  selected?: boolean,
+};
 
 const NavLink = ({ children, onClick, to, selected = false }: Props) => (
   <NavLinkText>

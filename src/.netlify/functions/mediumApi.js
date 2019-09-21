@@ -1,16 +1,16 @@
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
 import {
   mediumUrl,
   githubEventToken,
   githubEvent,
   githubUrl,
-} from './utils/config'
-import { log } from 'util'
+} from './utils/config';
+import { log } from 'util';
 
 // eslint-disable-next-line no-undef
 exports.handler = (event, context, callback) => {
-  const { httpMethod } = event
+  const { httpMethod } = event;
 
   if (httpMethod === 'GET') {
     fetch(mediumUrl, { 'content-type': 'application/json' })
@@ -18,12 +18,12 @@ exports.handler = (event, context, callback) => {
         response
           .text()
           .then(data => {
-            const realData = data.replace('])}while(1);</x>', '')
+            const realData = data.replace('])}while(1);</x>', '');
 
             // Throw error for reCaptcha
-            const response = JSON.parse(realData)
+            const response = JSON.parse(realData);
 
-            callback(null, { statusCode: 200, body: realData })
+            callback(null, { statusCode: 200, body: realData });
           })
           .catch(error => {
             /* fetch(githubUrl, {
@@ -34,9 +34,9 @@ exports.handler = (event, context, callback) => {
               },
               body: JSON.stringify({ event_type: githubEvent }),
             }).then(res => callback(null, { statusCode: 408, body: error })) */
-            callback(null, { statusCode: 408, body: error })
-          })
+            callback(null, { statusCode: 408, body: error });
+          });
       })
-      .catch(error => callback(null, { statusCode: 408, body: error }))
+      .catch(error => callback(null, { statusCode: 408, body: error }));
   }
-}
+};

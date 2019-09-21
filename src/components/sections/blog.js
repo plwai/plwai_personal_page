@@ -15,6 +15,55 @@ import Anchor from '../anchor';
 const mediumBaseUrl = 'https://medium.com/@pailee.wai/';
 const mediumPostMax = 5;
 
+const BlogPage = () => {
+  const [data, setData] = useState({});
+  const [isLoading, setLoading] = useState(true);
+  const [isError, setError] = useState(false);
+
+  async function fetchPosts() {
+    try {
+      setLoading(true);
+
+      const posts = await getMediumPost();
+
+      setData(posts);
+      setLoading(false);
+    } catch (error) {
+      setLoading(true);
+      setError(true);
+    }
+  }
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  return (
+    <BlogContainer>
+      <Anchor id="blog" />
+      <PostTitle>Blog Articles</PostTitle>
+      {isError && <center>Failed to fetch data...</center>}
+      <PostContainer>
+        {isLoading ? (
+          <ReactLoading
+            type={'bars'}
+            color={'#454545'}
+            height={'100px'}
+            width={'100px'}
+          />
+        ) : (
+          <Posts data={data} />
+        )}
+        {!isLoading && (
+          <PostHyperLink href={`${mediumBaseUrl}`} target="_blank">
+            <ViewMore>View More</ViewMore>
+          </PostHyperLink>
+        )}
+      </PostContainer>
+    </BlogContainer>
+  );
+};
+
 const Posts = ({ data }) => {
   const postKeys = Array.from(Object.keys(data));
 
@@ -63,55 +112,6 @@ const Posts = ({ data }) => {
       </PostHyperLink>
     );
   });
-};
-
-const BlogPage = () => {
-  const [data, setData] = useState({});
-  const [isLoading, setLoading] = useState(true);
-  const [isError, setError] = useState(false);
-
-  async function fetchPosts() {
-    try {
-      setLoading(true);
-
-      const posts = await getMediumPost();
-
-      setData(posts);
-      setLoading(false);
-    } catch (error) {
-      setLoading(true);
-      setError(true);
-    }
-  }
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
-  return (
-    <BlogContainer>
-      <Anchor id="blog" />
-      <PostTitle>Blog Articles</PostTitle>
-      {isError && <center>Failed to fetch data...</center>}
-      <PostContainer>
-        {isLoading ? (
-          <ReactLoading
-            type={'bars'}
-            color={'#454545'}
-            height={'100px'}
-            width={'100px'}
-          />
-        ) : (
-          <Posts data={data} />
-        )}
-        {!isLoading && (
-          <PostHyperLink href={`${mediumBaseUrl}`} target="_blank">
-            <ViewMore>View More</ViewMore>
-          </PostHyperLink>
-        )}
-      </PostContainer>
-    </BlogContainer>
-  );
 };
 
 export default BlogPage;

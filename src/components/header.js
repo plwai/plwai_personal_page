@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import Nav from './nav';
 import {
@@ -10,107 +10,117 @@ import {
 type Props = {
   siteTitle: string,
   to: string,
+};
+
+const Header = ({ siteTitle, to }: Props) => {
+  const nav = useRef(null);
+  const menu = useRef(undefined);
+
+  useScrollListenerEffect(nav);
+  useResizeEffect(menu, nav);
+
+  return (
+    <StyledHeaderContainer ref={nav}>
+      <Container>
+        <h1 style={{ margin: 0 }}>
+          <a
+            href={to}
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            {siteTitle}
+          </a>
+        </h1>
+        <MenuIconButton onClick={() => handleMenu(menu.current)}>
+          <MenuIconButton.icon />
+        </MenuIconButton>
+      </Container>
+
+      <Nav navRef={menu} menuHandler={() => handleMenu(menu.current)} />
+    </StyledHeaderContainer>
+  );
+};
+
+function handleMenu(menu) {
+  if (menu === undefined || menu === null) {
+    return;
+  }
+
+  if (menu.style.visibility === 'visible') {
+    menu.removeAttribute('style');
+  } else {
+    menu.style.visibility = 'visible';
+    menu.style.display = 'flex';
+  }
 }
 
-class Header extends Component<Props> {
-  constructor(props) {
-    super(props);
+function useScrollListenerEffect(nav) {
+  const lastScrollY = useRef(0);
 
-    this.lastScrollY = 0;
-    this.nav = null;
-  }
+  useEffect(() => {
+    function scrollListener() {
+      const currentNav = nav.current;
+      const currentScrollY = lastScrollY.current;
 
-  componentDidMount() {
-    window.addEventListener('scroll', () => this.handleScroll());
-    window.addEventListener('resize', () => this.handleResize());
-  }
+      if (
+        currentNav === undefined ||
+        currentNav === null ||
+        window.innerWidth < 820
+      ) {
+        return;
+      }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', () => this.handleScroll());
-    window.addEventListener('resize', () => this.handleResize());
-  }
+      if (
+        window.scrollY > currentScrollY &&
+        window.scrollY - currentScrollY < 500
+      ) {
+        currentNav.style.height = '0';
+        currentNav.style.opacity = '0';
+        currentNav.style.visibility = 'hidden';
+      } else {
+        currentNav.removeAttribute('style');
+      }
 
-  handleScroll() {
-    if (
-      this.nav === undefined ||
-      this.nav === null ||
-      window.innerWidth < 820
-    ) {
-      return;
+      lastScrollY.current = window.scrollY;
     }
 
-    if (
-      window.scrollY > this.lastScrollY &&
-      window.scrollY - this.lastScrollY < 500
-    ) {
-      this.nav.style.height = '0';
-      this.nav.style.opacity = '0';
-      this.nav.style.visibility = 'hidden';
-    } else {
-      this.nav.removeAttribute('style');
+    window.addEventListener('scroll', scrollListener);
+
+    return function cleanup() {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
+}
+
+function useResizeEffect(menu, nav) {
+  useEffect(() => {
+    function resizeListener() {
+      const currentMenu = menu.current;
+      const currentNav = nav.current;
+
+      if (currentMenu === undefined || currentMenu === null) {
+        return;
+      }
+
+      if (currentNav === undefined || currentNav === null) {
+        return;
+      }
+
+      if (window.innerWidth > 820) {
+        currentMenu.removeAttribute('style');
+      } else {
+        currentNav.removeAttribute('style');
+      }
     }
 
-    this.lastScrollY = window.scrollY;
-  }
+    window.addEventListener('resize', resizeListener);
 
-  handleResize() {
-    if (this.menu === undefined || this.menu === null) {
-      return;
-    }
-
-    if (this.nav === undefined || this.nav === null) {
-      return;
-    }
-
-    if (window.innerWidth > 820) {
-      this.menu.removeAttribute('style');
-    } else {
-      this.nav.removeAttribute('style');
-    }
-  }
-
-  handleMenu() {
-    if (this.menu === undefined || this.menu === null) {
-      return;
-    }
-
-    if (this.menu.style.visibility === 'visible') {
-      this.menu.removeAttribute('style');
-    } else {
-      this.menu.style.visibility = 'visible';
-      this.menu.style.display = 'flex';
-    }
-  }
-
-  render() {
-    const { siteTitle, to } = this.props;
-
-    return (
-      <StyledHeaderContainer ref={nav => (this.nav = nav)}>
-        <Container ref={el => (this.container = el)}>
-          <h1 style={{ margin: 0 }}>
-            <a
-              href={to}
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              {siteTitle}
-            </a>
-          </h1>
-          <MenuIconButton onClick={() => this.handleMenu()}>
-            <MenuIconButton.icon />
-          </MenuIconButton>
-        </Container>
-
-        <Nav
-          navRef={menu => (this.menu = menu)}
-          menuHandler={() => this.handleMenu()}
-        />
-      </StyledHeaderContainer>
-    );
-  }
+    return function cleanup() {
+      window.removeEventListener('resize', resizeListener);
+    };
+  }, []);
 }
 
 export default Header;
