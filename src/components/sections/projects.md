@@ -5,8 +5,8 @@ projects:
       title: 'Obsidian',
       url: 'https://github.com/jk-gan/obsidian',
       description: 'Web development framework in Rust',
-      screenshot: 'work-in-progress.JPG',
-      technology: 'Rust, Trie',
+      screenshot: 'obsidian.PNG',
+      technology: 'Rust',
     },
     {
       title: 'GPUMLib - SOM Surface Reconstruction',
