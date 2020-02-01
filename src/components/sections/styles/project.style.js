@@ -142,6 +142,7 @@ ProjectGrid.component.img = styled.img`
   margin: 0;
   height: 150px;
   width: 300px;
+  object-fit: contain;
 `;
 
 ProjectGrid.component.hyperlink = styled.a`
