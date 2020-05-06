@@ -3,10 +3,17 @@ projects:
   [
     {
       title: 'Obsidian',
-      url: 'https://github.com/jk-gan/obsidian',
+      url: 'https://github.com/obsidian-rs/obsidian',
       description: 'Web development framework in Rust',
       screenshot: 'obsidian.PNG',
       technology: 'Rust',
+    },
+    {
+      title: 'Flipper Redux Debugger Plugin',
+      url: 'https://github.com/jk-gan/flipper-plugin-redux-debugger',
+      description: 'React native redux debugger',
+      screenshot: 'flipper-redux.PNG',
+      technology: 'Javascript, Electron',
     },
     {
       title: 'GPUMLib - SOM Surface Reconstruction',
@@ -42,13 +49,6 @@ projects:
       description: 'Emulator for emulating Chip8',
       screenshot: 'ROE-chip8.PNG',
       technology: 'C/C++, Opengl 3.3, GLFW',
-    },
-    {
-      title: 'RootSolver',
-      url: 'https://github.com/plwai/RootSolver',
-      description: 'Utility to do root optimization from equations',
-      screenshot: 'RootSolver.PNG',
-      technology: 'Java',
     },
     {
       title: 'Bevtap Website',
