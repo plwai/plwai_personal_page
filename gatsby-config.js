@@ -1,7 +1,7 @@
-const proxy = require('http-proxy-middleware')
+const proxy = require('http-proxy-middleware');
 
 module.exports = {
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     // For netlify lambda cli tool
     app.use(
       '/.netlify/functions/',
@@ -11,7 +11,7 @@ module.exports = {
           '/.netlify/functions/': '',
         },
       })
-    )
+    );
   },
   siteMetadata: {
     title: 'Wai Pai Lee',
@@ -38,12 +38,5 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography',
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-127112943-1',
-        head: true,
-      },
-    },
   ],
-}
+};
