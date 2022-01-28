@@ -10,7 +10,7 @@ const ProfilePage = () => (
       <u>Wai</u> Pai Lee
     </ProfileContainer.myName>
     <ProfileContainer.description>
-      Software developer interested in Rust, React, Nodejs, C/C++, OpenGL
+      Software developer interested in Rust, React, Nodejs, C/C++, Vulkan, XR
     </ProfileContainer.description>
   </ProfileContainer>
 );
