@@ -28,12 +28,7 @@ const linkData = [
   },
 ];
 
-type Props = {
-  navRef: Function,
-  menuHandler: Function,
-};
-
-const Nav = ({ navRef, menuHandler }: Props) => {
+const Nav = ({ navRef, menuHandler }) => {
   return (
     <StyledNav ref={navRef}>
       {linkData.map(({ title, to }) => (

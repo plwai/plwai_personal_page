@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 
 export const NavLinkText = styled.h4`
   margin: 0;
@@ -18,7 +18,7 @@ export const NavLinkText = styled.h4`
   }
 `;
 
-export const StyledLink = _n_selected =>
+export const StyledLink = (_n_selected) =>
   css`
     color: white;
     padding: 0.4em;

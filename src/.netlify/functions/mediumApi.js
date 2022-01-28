@@ -14,10 +14,10 @@ exports.handler = (event, context, callback) => {
 
   if (httpMethod === 'GET') {
     fetch(mediumUrl, { 'content-type': 'application/json' })
-      .then(response => {
+      .then((response) => {
         response
           .text()
-          .then(data => {
+          .then((data) => {
             const realData = data.replace('])}while(1);</x>', '');
 
             // Throw error for reCaptcha
@@ -25,7 +25,7 @@ exports.handler = (event, context, callback) => {
 
             callback(null, { statusCode: 200, body: realData });
           })
-          .catch(error => {
+          .catch((error) => {
             /* fetch(githubUrl, {
               method: 'POST',
               headers: {
@@ -37,6 +37,6 @@ exports.handler = (event, context, callback) => {
             callback(null, { statusCode: 408, body: error });
           });
       })
-      .catch(error => callback(null, { statusCode: 408, body: error }));
+      .catch((error) => callback(null, { statusCode: 408, body: error }));
   }
 };
