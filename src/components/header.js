@@ -7,12 +7,7 @@ import {
   MenuIconButton,
 } from './styles/header.style';
 
-type Props = {
-  siteTitle: string,
-  to: string,
-};
-
-const Header = ({ siteTitle, to }: Props) => {
+const Header = ({ siteTitle, to }) => {
   const nav = useRef(null);
   const menu = useRef(undefined);
 
@@ -91,7 +86,7 @@ function useScrollListenerEffect(nav) {
     return function cleanup() {
       window.removeEventListener('scroll', scrollListener);
     };
-  }, []);
+  }, [nav]);
 }
 
 function useResizeEffect(menu, nav) {
@@ -120,7 +115,7 @@ function useResizeEffect(menu, nav) {
     return function cleanup() {
       window.removeEventListener('resize', resizeListener);
     };
-  }, []);
+  }, [menu, nav]);
 }
 
 export default Header;

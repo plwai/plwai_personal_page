@@ -13,11 +13,7 @@ import {
   FlexDiv,
 } from './styles/project.style';
 
-type Props = {
-  _n_data: any,
-};
-
-const ProjectPage = ({ _n_data }: Props) => (
+const ProjectPage = ({ _n_data }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -39,21 +35,21 @@ const ProjectPage = ({ _n_data }: Props) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <ProjectPageContainer>
         <Anchor id="project" />
         <StyledPageTitleDiv>
           <StyledPageTitleDiv.title>Projects</StyledPageTitleDiv.title>
         </StyledPageTitleDiv>
         <ProjectGrid>
-          {data.allMarkdownRemark.edges.map(nodes => {
+          {data.allMarkdownRemark.edges.map((nodes) => {
             const {
               node: {
                 frontmatter: { projects },
               },
             } = nodes;
 
-            return projects.map(project => (
+            return projects.map((project) => (
               <ProjectGrid.component key={generate()}>
                 <ProjectGrid.component.hyperlink
                   href={project.url}

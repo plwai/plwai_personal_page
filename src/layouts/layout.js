@@ -18,11 +18,7 @@ const BodyDiv = styled.div`
   height: 100%;
 `;
 
-type Props = {
-  children: React.Node,
-};
-
-const PageLayout = ({ children }: Props) => (
+const PageLayout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -33,7 +29,7 @@ const PageLayout = ({ children }: Props) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <BodyDiv>
         <Helmet
           title={data.site.siteMetadata.title}

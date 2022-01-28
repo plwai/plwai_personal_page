@@ -29,7 +29,7 @@ const PublicationPage = () => (
         <PublicationContainer.linksDiv>
           <PublicationContainer.linksDiv.link
             target="_blank"
-            href="http://on-demand.gputechconf.com/gtc/2018/video/S8425/"
+            href="https://on-demand.gputechconf.com/gtc/2018/presentation/s8425-deep-learning-for-surface-recognition.pdf"
           >
             <PublicationContainer.linksDiv.text>
               GTC 2018
