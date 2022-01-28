@@ -23,10 +23,6 @@ const linkData = [
     to: '#belief',
   },
   {
-    title: 'Blog',
-    to: '#blog',
-  },
-  {
     title: 'Contacts',
     to: '#contacts',
   },
